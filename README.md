@@ -40,6 +40,12 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
 ```
 
+
+**Step 4: Downloading the modle weights**
+```bash
+wget https://dl.fbaipublicfiles.com/watermark_anything/wam_mit.pth -P checkpoints/
+```
+
 ## Validation & Testing
 
 **Quick System Test:**
