@@ -50,8 +50,7 @@ wget https://dl.fbaipublicfiles.com/watermark_anything/wam_mit.pth -P checkpoint
 
 **Quick System Test:**
 ```bash
-# Test core functionality with trained model
-python validate_system_original.py
+python final_ultimate_attribution_benchmark.py --total_images 40 --output_file test_with_cropping.json
 ```
 
 **Expected Output:**
