@@ -1,23 +1,8 @@
-# Production Watermark System
+# ProvenAIre
 
-A streamlined, production-ready implementation of the Watermark Anything model for real-world deployment.
+A streamlined and more robust implementation of the Watermark Anything model for real-world deployment. Used to discriminate generated images with high precision even under sever agumentations like jpeg compression, blur, rotation and many more
 
-## Features
-
-- **High Performance**: 11+ FPS embedding, 4+ FPS detection on CPU
-- **Production Ready**: Simplified API, minimal dependencies, robust error handling  
-- **Proven Accuracy**: 80%+ detection accuracy with trained models
-- **Easy Integration**: Simple embed/detect interface
-- **Comprehensive Testing**: Full validation and benchmark suite
-
-## Prerequisites & Installation
-
-**System Requirements:**
-- Python 3.10.14 (required for modern type annotations)
-- PyTorch 2.0+ with CUDA 11.8+ (or CPU-only)
-- 4GB+ RAM, GPU recommended
-
-## Conda Environment
+## Installation
 
 **Step 1: Create Python 3.10.14 Environment**
 ```bash
@@ -37,6 +22,7 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 **Step 3: Install Required Packages**
 ```bash
+cd provenAIre
 pip install -r requirements.txt
 ```
 
@@ -44,37 +30,6 @@ pip install -r requirements.txt
 **Step 4: Downloading the modle weights**
 ```bash
 wget https://dl.fbaipublicfiles.com/watermark_anything/wam_mit.pth -P checkpoints/
-```
-
-## Validation & Testing
-
-**Quick System Test:**
-```bash
-python final_ultimate_attribution_benchmark.py --total_images 40 --output_file test_with_cropping.json
-```
-
-**Expected Output:**
-```
-🚀 Production Watermark System Validation & Demo (Original Models)
-✅ Original WAM model loaded successfully
-✅ Embedding: ~87ms per image (11+ FPS)
-✅ Detection: ~247ms per image (4+ FPS)  
-🎉 All validation tests passed!
-📋 System Status: READY FOR PRODUCTION
-```
-
-**Accuracy Testing:**
-```bash
-# Test detection accuracy specifically  
-python test_detection_accuracy.py
-
-# Expected: 80%+ accuracy distinguishing watermarked vs clean images
-```
-
-**Lightweight Test:**
-```bash
-# Minimal dependencies test
-python production_watermark_system/basic_validation.py
 ```
 
 ## Troubleshooting
@@ -104,37 +59,20 @@ python production_watermark_system/basic_validation.py
    pip install omegaconf==2.3.0 einops==0.8.0 timm==1.0.11 lpips==0.1.4
    ```
 
-## Quick Demo
+## Demo
 
-**Complete system validation:**
+To validate the model just run the scrypt `final_ultimate_attribution_benchmark.py`
+
+**Quick System Test:**
 ```bash
-# Run comprehensive validation (includes everything)
-python production_watermark_system/validate_system.py
-
-# Expected: 600+ FPS embedding, 700+ FPS detection
+python final_ultimate_attribution_benchmark.py --total_images 40 --output_file test_with_cropping.json
 ```
 
-**Large-Scale Testing:**
-```bash
-# Test with custom dataset
-python large_scale_test.py --num_images 1000 --test_dir results/
-
-# Results include:
-# - Embedding/detection accuracy
-# - Performance metrics  
-# - Attack robustness evaluation
-```
+This will test on only 40 images, for larger tests just change the `total_images` parameter.
 
 ## Advanced Features
 
 **AI Model Attribution:**
-```bash
-# Test attribution for different AI models
-python attribution_demo.py --model_ids 0,1,5,9
-```
+
 
 **Attack Robustness Testing:**
-```bash
-# Comprehensive attack evaluation
-python attack_robustness_test.py --attack_suite comprehensive
-```
